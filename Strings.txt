@@ -1,0 +1,99 @@
+------String literal and object----
+public class Test
+{
+    public static void main(String[] args)
+    {  
+         //string literal
+        String s1="Hi";
+        //string object
+        String s2=new String("Hello");
+        System.out.println(s1);
+        System.out.println(s2);
+        
+    }
+}
+
+
+
+-----METHODS------
+
+public class Test
+{
+    public static void main(String[] args)
+    {
+        String s1="";
+        System.out.println(s1.isEmpty());//true
+        String s2="hello";
+        System.out.println(s2.isEmpty());//false
+        System.out.println(s2.length());//5
+        System.out.println(s2.charAt(1));//e
+        System.out.println(s2.replace('o','a'));//hella
+        System.out.println(s2.substring(1));//ello
+        System.out.println(s2.substring(2,4));//ll
+        System.out.println(s2.indexOf('e'));//1
+        System.out.println(s2.lastIndexOf('l'));//3
+        System.out.println(s2.toLowerCase());
+        System.out.println(s2.toUpperCase());
+        System.out.println(s2.compareTo(s1));//5
+        String s3="hello hi bye";
+        System.out.println(s3.length());//8
+        System.out.println(s3.trim().length());//8
+        String[] ss=s.split("\\s");
+		for(String w:ss)
+		{
+			System.out.println(w);
+		}
+       String[] sss=s.split("\\s", 2);
+		for(String w1:sss)
+		{
+			System.out.println(w1);
+		}
+		
+	} 
+         
+       
+        
+        
+       }
+}
+
+------STRING BUFFER--------
+public class Test
+{
+      public static void main(String args[])
+  {
+      StringBuffer s=new StringBuffer("mother");
+      System.out.println(s.append("father"));
+      System.out.println(s.capacity());
+      System.out.println(s.insert(0,"my"));
+      System.out.println(s.replace(2,8,"mom"));
+      System.out.println(s.length());
+       System.out.println(s.charAt(2));
+     
+  }
+
+}
+
+------STRING REVERSE--------
+
+public class Test
+{
+      public static void main(String args[])
+  {
+      //using reverse method
+     StringBuffer a = new StringBuffer("my name is");
+     System.out.println(a.reverse());
+
+     //using character array
+     String s = "my name is maya"; 
+  
+        char[] c= s.toCharArray(); 
+  
+        for (int i = c.length-1; i>=0; i--) 
+            System.out.print(c[i]); 
+    
+  }
+
+}
+
+

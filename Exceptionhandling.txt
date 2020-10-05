@@ -1,0 +1,133 @@
+public class Test
+{
+    public static void main(String[] args)
+    {
+        // System.out.println(10/0);
+    
+        try{
+            System.out.println("1");
+           // System.out.println(10/0);
+            System.out.println("3");
+            
+        }
+        catch(ArithmeticException e)
+        {
+           // System.out.println(10/0);
+            
+            System.out.println("catch");
+        }
+        finally
+        {
+            // System.out.println(10/0);
+           
+           System.out.println("finally");
+        }
+         System.out.println(10/0);
+           //System.out.println("ooout");
+    }
+}
+
+
+
+
+
+public class Test
+{
+    public static void main(String[] args)
+    {
+        try{
+            System.out.println(10/0);
+        }
+        catch(ArithmeticException e)
+        {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+public class Test
+{
+    public static void main(String[] args)
+    {
+        try{
+            System.out.println(10/0);
+        }
+        catch(ArithmeticException e)
+        {
+           // e.toString();
+            System.out.println(e;
+        }
+    }
+}
+
+
+
+public class Test
+{
+    public static void main(String[] args)
+    {
+        Test t=new Test();
+        System.out.println(t.m1());
+    }
+        public int m1()
+        {
+        try{
+          //  System.out.println("try");
+            return 1 ;
+        }
+        catch(ArithmeticException e)
+        {
+           // e.toString();
+            return 2;//System.out.println(e.getMessage());
+        }
+        finally
+        {
+            return 3;//System.out.println("finally");
+        }
+    }
+}
+
+
+public class Test
+{
+    public static void main(String[] args)
+    {
+        Test t=new Test();
+        System.out.println(t.m1());
+    }
+        public int m1()
+        {
+        try{
+           System.out.println("try");
+          //  return 1 ;
+    
+            System.exit(0);
+        }
+        catch(ArithmeticException e)
+        {
+           // e.toString();
+            return 2;//System.out.println(e.getMessage());
+        }
+        finally
+        {
+            return 3;//System.out.println("finally");
+        }
+    }
+}
+
+
+
+
+
+
+public class Test
+{
+    public static void main(String[] args)
+    {
+        throw new ArithmeticException("division");
+    }
+}
+
+ throws ArithmeticException

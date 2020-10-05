@@ -1,0 +1,119 @@
+-------SERIALIZATION----------
+
+import java.io.*;
+class Test implements Serializable
+{
+   
+   int i=10;
+   int j=20;
+}
+public class serialDemo 
+{
+ public static void main(String[] args)
+ {
+     Test t1=new Test();
+     try{
+     FileOutputStream fos=new FileOutputStream("abc.ser");
+     ObjectOutputStream oos=new ObjectOutputStream(fos);
+     oos.writeObject(t1);
+     }
+     catch(Exception e)
+     {
+          System.out.println(1);
+    
+     }
+     try{
+     FileInputStream fis=new FileInputStream("abc.ser");
+     ObjectInputStream ois=new ObjectInputStream(fis);
+     Test t2=(Test)ois.readObject();
+      System.out.println(t2.i+".."+t2.j);   //OUTPUT : 10..20
+     }
+      catch(Exception e)
+     {
+          System.out.println(1);
+    
+     }
+    
+     
+ }
+}
+
+
+--------USING TRANSIENT KEYWORD--------
+
+import java.io.*;
+class Test implements Serializable
+{
+   
+  transient int i=10;
+  transient int j=20;
+}
+public class serialDemo 
+{
+ public static void main(String[] args)
+ {
+     Test t1=new Test();
+     try{
+     FileOutputStream fos=new FileOutputStream("abc.ser");
+     ObjectOutputStream oos=new ObjectOutputStream(fos);
+     oos.writeObject(t1);
+     }
+     catch(Exception e)
+     {
+          System.out.println(1);
+    
+     }
+     try{
+     FileInputStream fis=new FileInputStream("abc.ser");
+     ObjectInputStream ois=new ObjectInputStream(fis);
+     Test t2=(Test)ois.readObject();
+      System.out.println(t2.i+".."+t2.j);      //OUTPUT : 0..0
+
+     }
+      catch(Exception e)
+     {
+          System.out.println(1);
+    
+     }
+
+
+
+-----OBJECT GRAPH-----
+
+
+import java.io.*;
+class Dog implements Serializable
+{
+   Cat c=new Cat();
+  }
+  class Cat implements Serializable
+{
+   Rat r=new Rat();
+  }
+  class Rat implements Serializable
+{
+   int j=20;
+  }
+
+
+public class serialDemo 
+{
+ public static void main(String[] args) throws Exception
+ {
+     Dog d1=new Dog();
+     
+     FileOutputStream fos=new FileOutputStream("abc.ser");
+     ObjectOutputStream oos=new ObjectOutputStream(fos);
+     oos.writeObject(d1);
+     FileInputStream fis=new FileInputStream("abc.ser");
+     ObjectInputStream ois=new ObjectInputStream(fis);
+     Dog d2=(Dog)ois.readObject();
+      System.out.println(d2.c.r.j);   //OUTPUT=20
+     
+     
+ }
+}
+   
+     
+ }
+}

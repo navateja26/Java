@@ -1,0 +1,47 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+      LinkedList l=new LinkedList();
+      l.add("mom");
+      l.add("dad");
+      l.add("sis");
+      l.add("bro");
+      ListIterator ltr=l.listIterator();
+      while(ltr.hasNext())
+      {
+          String s=(String)ltr.next();
+          if(s.equals("dad"))
+          {
+              ltr.remove();
+          }
+          else if(s.equals("bro"))
+          {
+              ltr.add("friend");
+          }
+          else if(s.equals("sis"))
+          {
+              ltr.set("sister");
+          }
+      }
+       System.out.println(l) ; 
+       ListIterator ltr1=l.listIterator();
+    
+     /* while(ltr1.hasPrevious())
+      {
+          String s=(String)ltr1.previous();
+          if(s.equals("sis"))
+          {
+            Integer x=(Integer) ltr1.previousIndex();
+          }
+      }
+      */
+      
+      
+      
+      
+      
+      
+      System.out.println(l) ; 
+        
+    }
+}

@@ -1,0 +1,29 @@
+public class AutoBoxingUnboxing {
+
+	public static void main(String[] args) {
+		//AutoBoxing
+		Integer i=10;
+		int a=i;
+		System.out.println("The value of integer object i is:"+i);
+		System.out.println("The value of int type a is:"+a);
+		
+		Character c='c';
+		char x=c;
+		System.out.println("The value of character object c is:"+x);
+		System.out.println("The value of char type x is:"+c);
+		
+		//Unboxing
+		Integer i1=new Integer(5);
+		int s=i1;
+		System.out.println("The value of integer object i1 is:"+i1);
+		System.out.println("The value of int type s is :"+s);
+		
+		Boolean b=new Boolean("true");
+		boolean b1=b;
+		System.out.println("The value of  boolean object b is:"+b);		
+		System.out.println("The value of boolean type b1 is:"+b1);
+		
+		
+	}
+
+}

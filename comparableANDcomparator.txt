@@ -1,0 +1,145 @@
+----------COMPARABLE INTERFACE---------
+
+
+public class Product implements Comparable<Product> {
+	private int id;
+	private double price;
+	private String name;
+	public Product(int id, double price, String name) {
+		super();
+		this.id = id;
+		this.price = price;
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+		public String toString() {
+		return "Product [id=" + id + ", price=" + price + ", name=" + name + "]";
+	}
+	
+	public int compareTo(Product a) {
+		
+		return id-a.getId();
+	}
+	
+	
+	}
+**MAIN CLASS**
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ComparbleEx {
+
+	public static void main(String[] args) {
+		ArrayList <Product> a=new ArrayList <Product>();
+		a.add(new Product(1,200,"brush"));
+		a.add(new Product(6,500,"top"));
+		a.add(new Product(3,100,"toy"));
+		for(int i=0;i<a.size();i++)
+		{
+			System.out.println(a.get(i));
+		}
+		Collections.sort(a);
+		for(Product p:a)
+		{
+			System.out.println(p);
+		}
+	}
+
+}
+
+
+
+---------COMPARATOR---------
+
+
+public class Product
+{
+
+	private int id;
+	private double price;
+	private String name;
+	public Product(int id, double price, String name) {
+		super();
+		this.id = id;
+		this.price = price;
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String toString() {
+		return "Product [id=" + id + ", price=" + price + ", name=" + name + "]";
+	}
+	
+	
+}
+**MAIN CLASS**
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ComparbleEx {
+
+	public static void main(String[] args) {
+		ArrayList <Product> a=new ArrayList <Product>();
+		a.add(new Product(1,200,"brush"));
+		a.add(new Product(6,500,"top"));
+		a.add(new Product(3,100,"toy"));
+		for(int i=0;i<a.size();i++)
+		{
+			System.out.println(a.get(i));
+		}
+		Collections.sort(a,new CompareByPrice());
+		for(Product p:a)
+		{
+			System.out.println(p);
+		}
+	}
+
+}
+
+import java.util.Comparator;
+
+public class CompareByPrice implements Comparator<Product>{
+
+	
+	public int compare(Product a0, Product a1) {
+		
+		return (int) ((double) a0.getPrice()-a1.getPrice());
+	}
+	
+
+}
+

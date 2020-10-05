@@ -1,0 +1,99 @@
+-------HASHMAP-------
+
+
+
+import java.util.*;
+public class Test
+{
+    public static void main(String[] args)
+    
+    {
+        HashMap m=new HashMap();
+        m.put("apple",100);
+        m.put("ball",300);
+        m.put("dog",2000);
+        m.put("cat",1000);
+        System.out.println(m);//{apple=100, ball=300, cat=1000, dog=2000}
+        System.out.println(m.put("apple",500));//100
+        Set s=m.keySet();
+        System.out.println(s);//[apple, ball, cat, dog]
+        Collection c=m.values();
+         System.out.println(c);//[500, 300, 1000, 2000]
+         Set s1=m.entrySet();
+         System.out.println(s1);//[apple=500, ball=300, cat=1000, dog=2000]
+         Iterator itr=s1.iterator();
+         while(itr.hasNext())
+         {
+             Map.Entry m1=(Map.Entry)itr.next();
+             System.out.println(m1.getKey()+"=="+m1.getValue());
+             if(m1.getKey().equals("apple"))
+             {
+                 m1.setValue(600);
+             }
+         }
+         System.out.println(m);
+    }
+}
+
+
+
+-----LINKED HASHMAP--------
+
+import java.util.*;  
+ public class Test
+{  
+ public static void main(String args[])
+{  
+   LinkedHashMap<Integer, String> map = new LinkedHashMap<Integer, String>();           
+      map.put(100,"Apple");    
+     map.put(101,"bat");    
+     map.put(102,"cat");    
+     System.out.println(map.keySet());  
+     System.out.println(map.values());  
+     System.out.println(map.entrySet()); 
+     map.remove(102);
+     System.out.println(map);
+ }  
+}
+
+
+
+-----HASHCOLLISION-----
+
+import java.util.*;  
+ public class Test
+{  
+ public static void main(String args[])
+{  
+     Map<StringClass,String> h=new HashMap<StringClass,String>();
+     StringClass s1=new StringClass("MOM","DAD");
+     StringClass s2=new StringClass("MOTHER","FATHER");
+      StringClass s3=new StringClass("MOM","DAD");
+      h.put(s1,"THREE");
+      h.put(s2,"FOUR");
+      h.put(s3,"FIVE");
+     System.out.println(h);
+ }  
+}
+class StringClass
+{
+    private String str1;
+    private String str2;
+    public StringClass(String str1,String str2)
+    {
+        this.str1=str1;
+        this.str2=str2;
+    }
+    public int hashCode()
+    {
+        return(str1+str2).length();
+    }
+    public boolean equals(Object o)
+    {
+        if(str1.length()==str2.length())
+        {
+            return true;
+        }
+    return false;
+    }
+}

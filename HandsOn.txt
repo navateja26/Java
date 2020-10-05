@@ -1,0 +1,150 @@
+-------ENCAPSULATION----------
+public class Account {
+ private String name;
+ private int pin;
+ private double balance;
+public Account(String name, int pin, double balance) {
+	super();
+	this.name = name;
+	this.pin = pin;
+	this.balance = balance;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public int getPin() {
+	return pin;
+}
+public void setPin(int pin) {
+	this.pin = pin;
+}
+public double getBalance() {
+	return balance;
+}
+public void setBalance(double balance) {
+	this.balance = balance;
+}
+}
+public class Status {
+
+	public static void main(String[] args) {
+
+
+		Account A1=new Account("balu",1234,25000);
+		Account A2=new Account("ram",2584,50000);
+		Account A3=new Account("raj",1425,30000);
+		Account A[]=new Account[3];
+		A[0]=A1;
+		A[1]=A2;
+		A[2]=A3;
+		
+		double status=totalBal(A);
+		System.out.println(status);
+		
+	}
+       public static double totalBal(Account[] arr)
+          {
+	 double b=0;
+         for(int i=0;i<arr.length;i++)
+	   {
+	if(arr[i].getName()=="balu"&&arr[i].getPin()==1234)
+	    {
+		b=b+arr[i].getBalance();
+	    }
+	 }
+	return b;
+    }
+ }
+
+-------ABSTRACTION-----------
+abstract class  Fruit
+{
+	public abstract void taste();
+	
+}
+class Mango extends Fruit
+{
+ public void taste()
+ {
+	 System.out.println("The taste of mango is sweet");
+ }
+}
+class Lemon extends Fruit
+{
+	public void taste()
+	{
+		System.out.println("The taste of lemon is soar");
+	}
+}
+public class Ex1 {
+
+	public static void main(String[] args) {
+
+    Mango m=new Mango();
+    m.taste();
+    Lemon l=new Lemon();
+    l.taste();
+ }
+
+}
+
+--------POLYMORPHISM-----------
+******METHOD OVERLOADING******
+public class Test {
+	void m1(int a)
+	{
+		System.out.println(a);
+	}
+   void m1(int c,double b)
+   {
+	 System.out.println(c+b);  
+   }
+   void m1(char ch)
+   {
+	   System.out.println("char");
+   }
+	public static void main(String[] args) {
+
+      Test t=new Test();
+      t.m1(10);
+      t.m1(10,7.2);
+      t.m1('a');
+	}
+
+}
+******METHOD OVERRIDING******
+public class Vehicles {
+   double rate()
+   {
+	  return 0; 
+   }
+}
+class Bike extends Vehicles
+{
+ double rate()
+ {
+	 return 200000;
+ }
+ class Car extends Vehicles
+ {
+	 double rate()
+	 {
+		 return 1000000;
+	 }
+ }
+ }
+ public class Test2 {
+
+	public static void main(String[] args) {
+		Bike x=new Bike();
+		System.out.println("The rate of bike is "+x.rate());
+		Car v=new Car();
+		System.out.println("The rate of car is "+v.rate());
+		
+	}
+
+}
+
